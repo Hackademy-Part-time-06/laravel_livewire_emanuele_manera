@@ -20,9 +20,8 @@ class TaskController extends Controller
      */
     public function create()
     {
-        
+
         return view('tasks.create');
-        
     }
 
     /**
@@ -54,7 +53,7 @@ class TaskController extends Controller
      */
     public function update(Request $request, Task $task)
     {
-        
+        //
     }
 
     /**

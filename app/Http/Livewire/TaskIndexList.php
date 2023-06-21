@@ -13,8 +13,10 @@ class TaskIndexList extends Component
         return view('livewire.task-index-list', compact('tasks'));
     }
 
-    public function destroy (Task $task){
+    public function destroy(Task $task)
+    {
         $task->delete();
         session()->flash('task', 'Task eliminato correttamente!');
+        return redirect('/tasks');
     }
 }

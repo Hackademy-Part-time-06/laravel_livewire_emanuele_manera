@@ -14,10 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::redirect('/', '/tasks');
 Route::get('/tasks', [TaskController::class, 'index'])->name('tasks.index');
-Route::get('/tasks/nuovo', [TaskController::class, 'create'])->name('tasks.create');
+Route::get('/tasks/crea', [TaskController::class, 'create'])->name('tasks.create');
 Route::get('/tasks/{task}/modifica', [TaskController::class, 'edit'])->name('tasks.edit');

@@ -11,7 +11,6 @@ class TaskCreateForm extends Component
 
     protected $rules = [
         'title' => 'required',
-        
     ];
 
     public function updated($propertyName)
@@ -19,19 +18,18 @@ class TaskCreateForm extends Component
         $this->validateOnly($propertyName);
     }
 
-    public function store() {
+    public function store()
+    {
         $this->validate();
+
         Task::create([
             'title' => $this->title,
             'description' => $this->description,
         ]);
 
-
-        return redirect('/tasks');
         //$this->reset('title', 'description');
-
-
-        //session()->flash('task', 'Task creato correttamente!');
+        session()->flash('task', 'Task creato correttamente!');
+        return redirect('/tasks');
     }
 
     public function render()

@@ -1,5 +1,3 @@
-
-
 <form wire:submit.prevent="store">
     @csrf
 
@@ -21,7 +19,7 @@
             <span class="error text-danger">{{ $message }}</span>
         @enderror
     </div>
-    
+
     <div class="mb-3">
         <label for="description" class="form-label">Descrizione</label>
         <textarea class="form-control" wire:model.debounce.1000ms="description"></textarea>
